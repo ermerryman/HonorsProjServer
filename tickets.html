@@ -1,0 +1,46 @@
+<html ng-app="app">
+<head>
+<title>GymApp - Tickets</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script src=".\JS\Controllers\ticketCtrl.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body ng-controller="ticketController">
+<a style="text-decoration:none;" href="/"><h1 style="color:red">GymApp</h1></a>
+<p>Please select what you'd like to see.</p>
+<a href="/equipment"><button>Equipment</button></a>
+<a href="/tickets"><button>Tickets</button></a>
+    <div id="ticketList">
+	<h1>Showing {{ tickets.length }} tickets</h1>
+        <table width="100%">
+		<caption>Ticket list</caption>
+			<tr>
+				<th>ID</th>
+				<th>Equipment</th>
+				<th>Date Reported</th>
+				<th>Date Resolved</th>
+				<th>User Comment</th>
+				<th>Image</th>
+				<th>Interactive</th>
+				<th>Close Ticket</th>
+			</tr>
+			<tr ng-repeat="ticket in tickets">
+				<td>{{ ticket.ticketId }}</td>
+				<td>{{ ticket.equipName }}</td>
+				<td>{{ ticket.dateReported }}</td>
+				<td>{{ ticket.dateResolved }}</td>
+				<td>{{ ticket.userDesc }}</td>
+				<td style="text-align:center"><a href="/TicketImages/{{ticket.imageUrl}}"><img ng-style="ticket.imageUrl == '' && {'display': 'none'} || {'display': 'visible'}" height="20" src="/Public/image.png"/></a></td>
+				<td style="text-align:center"><a href="/interactive/{{ ticket.ticketId }}"><img ng-style="ticket.interactive == '' && {'display': 'none'} || {'display': 'visible'}" height="20" src="/Public/interactive.png"/></a></td>
+				<td style="text-align:center"><a href="/resolution/{{ticket.ticketId}}"><button ng-style="ticket.dateResolved == '' && {'display': 'visible'} || {'display': 'none'}">Close</button></a></td>
+			<tr>
+        </table>
+	</div>
+	<hr>
+	<div class="footer">
+		<a href="/Public/Docs/GymAppUserGuide.pdf">User Guide</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span>GymApp</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/Public/Docs/GymAppTechDoc.pdf">Technical Documentation</a>
+	<div>
+</body>
+</html>

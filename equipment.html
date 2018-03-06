@@ -1,0 +1,38 @@
+<html ng-app="app">
+<head>
+<title>GymApp - Equipment</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script src=".\JS\Controllers\equipmentCtrl.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body ng-controller="equipmentController">
+<a style="text-decoration:none;" href="/"><h1 style="color:red">GymApp</h1></a>
+<p>Please select what you'd like to see.</p>
+<a href="/equipment"><button>Equipment</button></a>
+<a href="/tickets"><button>Tickets</button></a>
+    <div id="equipmentList">
+	<h1>Showing {{ equipment.length }} pieces of equipment</h1>
+        <table width="50%">
+		<caption>Equipment list</caption>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Image</th>
+				<th>Status</th>
+			</tr>
+			<tr ng-repeat="status in equipment">
+				<td>{{ status.equipId }}</td>
+				<td>{{ status.equipName }}</td>
+				<td><a href="/Images/{{status.imageURL}}"><img height="20" src="/Public/image.png"/></a></td>
+				<td ng-style="status.status == 1 && {'background-color': 'green'} || {'background-color': 'red'} "></td>
+			<tr>
+        </table>
+	</div>
+	<hr>
+	<div class="footer">
+		<a href="/Public/Docs/GymAppUserGuide.pdf">User Guide</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span>GymApp</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/Public/Docs/GymAppTechDoc.pdf">Technical Documentation</a>
+	<div>
+<body>
+</html>

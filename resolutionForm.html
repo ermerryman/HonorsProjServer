@@ -1,0 +1,28 @@
+<html ng-app="app">
+<head>
+<title>GymApp - Resolution</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script src="..\JS\Controllers\resolutionCtrl.js"></script>
+<link rel="stylesheet" type="text/css" href="..\style.css"/>
+</head>
+<body ng-controller="resolutionController">
+<a style="text-decoration:none;" href="/"><h1 style="color:red">GymApp</h1></a>
+<p>Please select what you'd like to see.</p>
+<a href="/equipment"><button>Equipment</button></a>
+<a href="/tickets"><button>Tickets</button></a>
+    <div id="resolutionForm">
+		<h1>Resolution for: Ticket {{ticket.ticketId}} ({{ticket.equipName}})</h1>
+		<form>
+			Name: <br><input type="text" ng-model="Resolution.name"><br>
+			Actions Taken: <br><textarea cols="50" rows="4" ng-model="Resolution.actions"></textarea><br><br>
+			<button ng-click="submitResolution()">Submit</button>
+		</form>
+	</div>
+	<hr>
+	<div class="footer">
+		<a href="/Public/Docs/GymAppUserGuide.pdf">User Guide</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span>GymApp</span>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/Public/Docs/GymAppTechDoc.pdf">Technical Documentation</a>
+	<div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+db.tickets.insert(
+	[
+		{ticketId:1,equipName:"Free Weight Bench",dateReported:Date(),dateResolved:Date(),imageUrl: ""},
+		{ticketId:2,equipName:"Leg Press",dateReported:Date(),dateResolved: "",imageUrl: "1.jpg"},
+		{ticketId:3,equipName:"Squat Rack",dateReported:Date(),dateResolved: "",imageUrl: ""}
+	]
+)

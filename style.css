@@ -1,0 +1,19 @@
+table {
+	border: 1px solid;
+}
+
+td {
+	border: 1px solid;
+}
+
+th {
+	text-align: left;
+}
+
+.footer {
+	text-align: center;
+}
+
+body {
+	background-color: #D3D3D3;
+}
